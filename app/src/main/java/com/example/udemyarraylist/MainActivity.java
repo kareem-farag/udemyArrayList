@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<String> myarrayList = new ArrayList(asList("Kareem","Ahmed","Khaled","Mohamed","Kinzy"));
+        final ArrayList<String> myarrayList = new ArrayList(asList("Kareem","Ahmed","Khaled","Mohamed","Kinzy"));
         GridView gridView = findViewById(R.id.gridView);
 
         ArrayAdapter arrayAdapter = new ArrayAdapter(getApplicationContext(),R.layout.support_simple_spinner_dropdown_item,myarrayList);
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getApplicationContext(),"sada",Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(),myarrayList.get(position),Toast.LENGTH_LONG).show();
 
             }
         });
